@@ -1,0 +1,14 @@
+{
+  "app": "nail-art-transfer",
+  "version": "1.0.0",
+  "build": {
+    "builder": "heroku/buildpacks:20"
+  },
+  "environments": {
+    "production": {
+      "env": {
+        "PORT": "8000"
+      }
+    }
+  }
+}

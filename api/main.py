@@ -17,7 +17,7 @@ import cv2
 import mediapipe as mp
 
 # 导入指甲检测模块
-from nail_detector_final import refine_nail_detection_final
+from nail_detector_precise import refine_nail_detection_precise
 
 # 配置日志
 logging.basicConfig(level=logging.INFO)
@@ -406,7 +406,7 @@ async def transfer_nail_art(
         if landmarks:
             logger.info("检测到手部关键点")
             # 使用最终版本指甲检测 - 参考商用方案
-            nail_regions = refine_nail_detection_final(hand_bgr, landmarks, hand_bgr.shape)
+            nail_regions = refine_nail_detection_precise(hand_bgr, landmarks, hand_bgr.shape)
             result = apply_nail_art_to_hand(hand_bgr, nail_art_bgr, nail_regions)
         else:
             logger.info("未检测到手部，使用简化处理")
