@@ -1,19 +1,12 @@
 {
   "version": 2,
-  "public": true,
-  "github": {
-    "silent": true
-  },
-  "builds": [
+  "buildCommand": "cd app && npm run build",
+  "outputDirectory": "app/dist",
+  "framework": null,
+  "rewrites": [
     {
-      "src": "app/package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "https://nail-art-transfer-production.up.railway.app/api/$1"
+      "source": "/(.*)",
+      "destination": "/app/dist/index.html"
     }
   ]
 }
