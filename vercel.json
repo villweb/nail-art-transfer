@@ -1,11 +1,19 @@
 {
-  "buildCommand": "cd app && npm install && npm run build",
-  "outputDirectory": "app/dist",
-  "framework": "vite",
-  "rewrites": [
+  "version": 2,
+  "public": true,
+  "github": {
+    "silent": true
+  },
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://nail-art-transfer-production.up.railway.app/api/$1"
+      "src": "app/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "https://nail-art-transfer-production.up.railway.app/api/$1"
     }
   ]
 }
