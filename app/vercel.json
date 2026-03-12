@@ -1,11 +1,18 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
+  "version": 2,
+  "public": true,
   "rewrites": [
     {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
       "source": "/api/(.*)",
-      "destination": "https://nail-art-transfer-production.up.railway.app/api/$1"
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
     }
   ]
 }
