@@ -1,0 +1,32 @@
+{
+  "name": "nail-art-transfer",
+  "services": [
+    {
+      "name": "api",
+      "github": {
+        "repository": "villweb/nail-art-transfer",
+        "branch": "main"
+      },
+      "build": {
+        "type": "docker",
+        "dockerfile": "Dockerfile"
+      },
+      "ports": [
+        {
+          "port": 8000,
+          "protocol": "http"
+        }
+      ],
+      "routes": [
+        {
+          "path": "/",
+          "port": 8000
+        }
+      ],
+      "env": {
+        "PORT": "8000"
+      },
+      "instance_type": "free"
+    }
+  ]
+}
