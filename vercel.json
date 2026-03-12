@@ -1,11 +1,11 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "buildCommand": "cd app && npm install && npm run build",
+  "outputDirectory": "app/dist",
   "framework": "vite",
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://nail-art-transfer-api.railway.app/api/$1"
+      "destination": "https://nail-art-transfer-production.up.railway.app/api/$1"
     }
   ]
 }
