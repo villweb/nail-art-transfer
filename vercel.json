@@ -3,6 +3,16 @@
   "buildCommand": "cd app && npm install && npm run build",
   "outputDirectory": "app/dist",
   "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://nail-art-transfer-production.up.railway.app/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
   "cleanUrls": true,
   "trailingSlash": false
 }
