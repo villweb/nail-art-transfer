@@ -2,7 +2,7 @@ app = 'nail-art-transfer'
 primary_region = 'sin'
 
 [build]
-  builder = "heroku/buildpacks:20"
+  dockerfile = "Dockerfile"
 
 [env]
   PORT = "8000"
