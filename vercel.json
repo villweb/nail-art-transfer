@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "cd app && npm run build",
+  "buildCommand": "cd app && npm install && npm run build",
   "outputDirectory": "app/dist",
-  "framework": null,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/app/dist/index.html"
-    }
-  ]
+  "framework": "vite",
+  "cleanUrls": true,
+  "trailingSlash": false
 }
